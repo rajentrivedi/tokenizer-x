@@ -72,6 +72,6 @@ Please review [our security policy](../../security/policy) on how to report secu
 ## License
 
 # TokenizerX is developed using 
-[GPT-3 Encoder PHP]('https://github.com/CodeRevolutionPlugins/GPT-3-Encoder-PHP')
+[GPT-3 Encoder PHP](https://github.com/CodeRevolutionPlugins/GPT-3-Encoder-PHP)
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
