@@ -1,9 +1,9 @@
 # Calculates the OpenAI tokens for the given prompt
-Cancel changes
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rajentrivedi/tokenizer-x.svg?style=flat-square)](https://packagist.org/packages/rajentrivedi/tokenizer-x)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/rajentrivedi/tokenizer-x/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/rajentrivedi/tokenizer-x/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/rajentrivedi/tokenizer-x/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/rajentrivedi/tokenizer-x/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/rajentrivedi/tokenizer-x.svg?style=flCancel changesat-square)](https://packagist.org/packages/rajentrivedi/tokenizer-x)
+[![Total Downloads](https://img.shields.io/packagist/dt/rajentrivedi/tokenizer-x.svg?style=flat-square)](https://packagist.org/packages/rajentrivedi/tokenizer-x)
+
 
 
 
