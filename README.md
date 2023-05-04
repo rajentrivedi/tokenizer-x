@@ -11,7 +11,8 @@
 ## TokenizerX
 TokenzierX is a Laravel package that calculates the tokens required for a given prompt before requesting the OpenAI REST API. This package helps to ensure that the user does not exceed the OpenAI API token limit and can generate accurate responses.
 
-To access the OpenAI Rest API, you may consider the beautiful Laravel Package [OpenAI PHP]('https://github.com/openai-php/client')
+To access the OpenAI Rest API, you may consider the beautiful Laravel Package 
+[OpenAI PHP]('https://github.com/openai-php/client')
 
 ## Installation
 
