@@ -41,7 +41,7 @@ Please make sure that text of the file don't change while reading the file progr
 ```php
 TokenizerX::tokens(file_get_contents('path_to_file'));
 ```
-This will return an array of tokens generated & compare those token Ids with OpenAi's tokenizer
+This will return an array of tokens generated & compare those token Ids with
 [OpenAI Tokenizer](https://platform.openai.com/tokenizer)
 
 You can also use the OpenAI Tokenizer to double-check package generated token counts.
