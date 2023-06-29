@@ -64,6 +64,15 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
 
+## ⭐ Star the Repository ⭐
+
+If you find this project useful or interesting, I kindly request you to give it a ⭐ star on GitHub. Your support will encourage and motivate me to continue improving and maintaining this project.
+
+By starring the repository, you can show appreciation for the work put into developing this open-source project. It also helps to increase its visibility, making it more accessible to other developers and potentially attracting contributors.
+
+To give a ⭐ star, simply click on the **Star** button at the top-right corner of the repository page.
+
+
 ## Credits
 
 - [Rajen Trivedi](https://github.com/rajentrivedi)
