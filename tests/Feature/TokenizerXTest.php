@@ -21,6 +21,6 @@ it('counts lorem tokens', function () {
 });
 
 it('counts special character tokens', function () {
-   $count = TokenizerX::count('@');
-   $this->assertSame(1, $count);
+    $count = TokenizerX::count('@');
+    $this->assertSame(1, $count);
 });

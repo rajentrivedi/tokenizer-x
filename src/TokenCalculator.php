@@ -11,13 +11,13 @@ class TokenCalculator
         for ($i = $len >> 1, $j = 0; $i < $len; ++$i, ++$j) {
             switch (true) {
                 case $str[$i] < "\x80": $str[$j] = $str[$i];
-                break;
+                    break;
                 case $str[$i] < "\xC0": $str[$j] = "\xC2";
-                $str[++$j] = $str[$i];
-                break;
+                    $str[++$j] = $str[$i];
+                    break;
                 default: $str[$j] = "\xC3";
-                $str[++$j] = \chr(\ord($str[$i]) - 64);
-                break;
+                    $str[++$j] = \chr(\ord($str[$i]) - 64);
+                    break;
             }
         }
 

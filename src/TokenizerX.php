@@ -8,11 +8,11 @@ class TokenizerX
 {
     public static function tokens($prompt, $model = null): array
     {
-        if($model != null)
-        {
+        if ($model != null) {
             $provider = new EncoderProvider();
             $encoder = $provider->getForModel($model);
             $tokens = $encoder->encode($prompt);
+
             return $tokens;
         }
         $calculator = new TokenCalculator();
@@ -22,11 +22,11 @@ class TokenizerX
 
     public static function count($prompt, $model = null): int
     {
-        if($model != null)
-        {
+        if ($model != null) {
             $provider = new EncoderProvider();
             $encoder = $provider->getForModel($model);
             $tokens = $encoder->encode($prompt);
+
             return count($tokens);
         }
         $calculator = new TokenCalculator();
