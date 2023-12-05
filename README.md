@@ -9,10 +9,52 @@
 
 
 ## TokenizerX
+TokenizerX is a Laravel package designed to streamline tokenization processes in your applications. With the latest update, TokenizerX now supports cutting-edge GPT-4 models, providing advanced natural language processing capabilities.
+
 TokenzierX is a Laravel package that calculates the tokens required for a given prompt before requesting the OpenAI REST API. This package helps to ensure that the user does not exceed the OpenAI API token limit and can generate accurate responses.
 
 To access the OpenAI Rest API, you may consider the beautiful Laravel Package 
 [OpenAI PHP](https://github.com/openai-php/client)
+
+## Supported OpenAI Models
+- gpt-4
+- gpt-3.5-turbo
+- text-davinci-003
+- text-davinci-002
+- text-davinci-001
+- text-curie-001
+- text-babbage-001
+- text-ada-001
+- davinci
+- curie
+- babbage
+- ada
+- code-davinci-002
+- code-davinci-001
+- code-cushman-002
+- code-cushman-001
+- davinci-codex
+- cushman-codex
+- text-davinci-edit-001
+- code-davinci-edit-001
+- text-embedding-ada-002
+- text-similarity-davinci-001
+- text-similarity-curie-001
+- text-similarity-babbage-001
+- text-similarity-ada-001
+- text-search-davinci-doc-001
+- text-search-curie-doc-001
+- text-search-babbage-doc-001
+- text-search-ada-doc-001
+- code-search-babbage-code-001
+- code-search-ada-code-001
+
+## Supported Encoding
+- r50k_base
+- p50k_base
+- p50k_edit
+- cl100k_base
+
 
 ## Installation
 
@@ -23,12 +65,16 @@ composer require rajentrivedi/tokenizer-x
 ```
 
 ## Usage
-
+By default package will condsider gpt-3 model
 ```php
 use Rajentrivedi\TokenizerX\TokenizerX;
 TokenizerX::count("how are you?");
 ```
-
+If You want token counts for specific OpenAI model, you can pass model as a second argument from above given supported model list.
+```php
+use Rajentrivedi\TokenizerX\TokenizerX;
+TokenizerX::count("how are you?", "gpt-4");
+```
 You can also read the text from file
 
 ```php
@@ -82,6 +128,10 @@ To give a ⭐ star, simply click on the **Star** button at the top-right corner 
 
 # TokenizerX is developed using 
 - [GPT-3 Encoder PHP](https://github.com/CodeRevolutionPlugins/GPT-3-Encoder-PHP)
+- [Tiktoken-php](https://github.com/yethee/tiktoken-php)
 - [Laravel Package Skeleton by Spatie](https://github.com/spatie/package-skeleton-laravel)
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+
+Above given is readme file of my package TokenizerX, I have recentaly added support for various openai models which is mentioned in the readme file, please write a blog for me
