@@ -2,7 +2,7 @@
     "name": "rajentrivedi/tokenizer-x",
     "description": "TokenizerX calculates required tokens for given prompt",
     "keywords": [
-        "laravel","tokenizer-x", "tokenizer", "token", "php", "openai", "codex", "GPT-3", "DALL-E", "natural", "language", "processing"
+        "laravel","tokenizer-x", "tokenizer", "token", "php", "openai", "codex", "GPT-3", "DALL-E", "natural", "language", "processing", "chatgpt", "r50k_base", "p50k_base","p50k_edit","cl100k_base"
     ],
     "homepage": "https://github.com/rajentrivedi/tokenizer-x",
     "license": "MIT",
