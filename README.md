@@ -132,6 +132,3 @@ To give a ⭐ star, simply click on the **Star** button at the top-right corner 
 - [Laravel Package Skeleton by Spatie](https://github.com/spatie/package-skeleton-laravel)
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-
-Above given is readme file of my package TokenizerX, I have recentaly added support for various openai models which is mentioned in the readme file, please write a blog for me
