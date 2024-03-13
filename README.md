@@ -7,6 +7,8 @@
 
 
 
+### TokenizerX Laravel 11
+TokenizerX is now supporting Laravel 11.
 
 ## TokenizerX
 TokenizerX is a Laravel package designed to streamline tokenization processes in your applications. With the latest update, TokenizerX now supports cutting-edge GPT-4 models, providing advanced natural language processing capabilities.
