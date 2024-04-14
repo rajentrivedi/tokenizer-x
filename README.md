@@ -100,6 +100,8 @@ This will return an array of tokens generated & compare those token Ids with
 You can also use the OpenAI Tokenizer to double-check package generated token counts.
 
 ## Support
+If you find TokenizerX helpful and would like to support its ongoing development, you can contribute by buying me a coffee! Your support helps in maintaining and improving the package for the Laravel community.
+
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/rajentrivedi)
 
 ## Testing
