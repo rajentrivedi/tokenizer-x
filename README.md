@@ -102,7 +102,7 @@ You can also use the OpenAI Tokenizer to double-check package generated token co
 ## Support
 If you find TokenizerX helpful and would like to support its ongoing development, you can contribute by buying me a coffee! Your support helps in maintaining and improving the package for the Laravel community.
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/rajentrivedi)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/T6T4T0NM4)
 
 ## Testing
 
