@@ -5,7 +5,7 @@ on:
     paths:
       - '**.php'
       - 'phpstan.neon.dist'
-
+      
 jobs:
   phpstan:
     name: phpstan
