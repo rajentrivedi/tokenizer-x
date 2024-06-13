@@ -5,23 +5,21 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/rajentrivedi/tokenizer-x.svg?style=flat-square)](https://packagist.org/packages/rajentrivedi/tokenizer-x)
 
 
+TokenizerX supports Laravel 11 and Laravel 10.
 
-
-### TokenizerX Laravel 11
-TokenizerX is now supporting Laravel 11.
-
-### Laravel 11 Installation
+### Installation
 
 ```bash
-    composer require rajentrivedi/tokenizer-x:dev-upgrade-laravel-11
+    composer require rajentrivedi/tokenizer-x
 ```
+
 ## TokenizerX
 TokenizerX is a Laravel package designed to streamline tokenization processes in your applications. With the latest update, TokenizerX now supports cutting-edge GPT-4 models, providing advanced natural language processing capabilities.
 
-TokenzierX is a Laravel package that calculates the tokens required for a given prompt before requesting the OpenAI REST API. This package helps to ensure that the user does not exceed the OpenAI API token limit and can generate accurate responses.
+It calculates the tokens required for a given prompt before requesting the OpenAI REST API. This package helps to ensure that the user does not exceed the OpenAI API token limit and can generate accurate responses.
 
 To access the OpenAI Rest API, you may consider the beautiful Laravel Package 
-[OpenAI PHP](https://github.com/openai-php/client)
+[OpenAI PHP](https://github.com/openai-php/client).
 
 ## Supported OpenAI Models
 - gpt-4
@@ -72,12 +70,13 @@ composer require rajentrivedi/tokenizer-x
 ```
 
 ## Usage
-By default package will condsider gpt-3 model
+By default package will consider GPT-3 model
 ```php
 use Rajentrivedi\TokenizerX\TokenizerX;
 TokenizerX::count("how are you?");
 ```
-If You want token counts for specific OpenAI model, you can pass model as a second argument from above given supported model list.
+
+If you want token counts for specific OpenAI model, you can pass model as a second argument from above given supported model list.
 ```php
 use Rajentrivedi\TokenizerX\TokenizerX;
 TokenizerX::count("how are you?", "gpt-4");
@@ -86,15 +85,14 @@ You can also read the text from file
 
 ```php
 TokenizerX::count(file_get_contents('path_to_file'));
-
 ```
 
-Please make sure that text of the file don't change while reading the file programmatically, this may happen due to encoding. You can check the generated token Ids by using following
+Please make sure that text of the file don't change while reading the file programmatically, this may happen due to encoding. You can check the generated token IDs by using following
 
 ```php
 TokenizerX::tokens(file_get_contents('path_to_file'));
 ```
-This will return an array of tokens generated & compare those token Ids with
+This will return an array of tokens generated & compare those token IDs with
 [OpenAI Tokenizer](https://platform.openai.com/tokenizer)
 
 You can also use the OpenAI Tokenizer to double-check package generated token counts.
