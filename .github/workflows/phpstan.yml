@@ -1,8 +1,11 @@
 name: PHPStan
 
 on:
-  workflow_dispatch:
-
+  push:
+    paths:
+      - '**.php'
+      - 'phpstan.neon.dist'
+      
 jobs:
   phpstan:
     name: phpstan
