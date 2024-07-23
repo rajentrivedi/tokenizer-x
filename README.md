@@ -9,6 +9,7 @@ TokenizerX supports Laravel 11 and Laravel 10.
 
 ### Installation
 
+
 ```bash
     composer require rajentrivedi/tokenizer-x
 ```
@@ -22,6 +23,7 @@ To access the OpenAI Rest API, you may consider the beautiful Laravel Package
 [OpenAI PHP](https://github.com/openai-php/client).
 
 ## Supported OpenAI Models
+- gpt-4o
 - gpt-4
 - gpt-3.5-turbo
 - text-davinci-003
