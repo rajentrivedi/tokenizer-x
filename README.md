@@ -23,6 +23,7 @@ To access the OpenAI Rest API, you may consider the beautiful Laravel Package
 [OpenAI PHP](https://github.com/openai-php/client).
 
 ## Supported OpenAI Models
+
 - gpt-4o
 - gpt-4
 - gpt-3.5-turbo
@@ -57,6 +58,7 @@ To access the OpenAI Rest API, you may consider the beautiful Laravel Package
 - code-search-ada-code-001
 
 ## Supported Encoding
+
 - r50k_base
 - p50k_base
 - p50k_edit
@@ -72,17 +74,23 @@ composer require rajentrivedi/tokenizer-x
 ```
 
 ## Usage
+
 By default package will consider GPT-3 model
 ```php
+
 use Rajentrivedi\TokenizerX\TokenizerX;
 TokenizerX::count("how are you?");
+
 ```
 
 If you want token counts for specific OpenAI model, you can pass model as a second argument from above given supported model list.
 ```php
+
 use Rajentrivedi\TokenizerX\TokenizerX;
 TokenizerX::count("how are you?", "gpt-4");
+
 ```
+
 You can also read the text from file
 
 ```php
@@ -92,14 +100,18 @@ TokenizerX::count(file_get_contents('path_to_file'));
 Please make sure that text of the file don't change while reading the file programmatically, this may happen due to encoding. You can check the generated token IDs by using following
 
 ```php
+
 TokenizerX::tokens(file_get_contents('path_to_file'));
+
 ```
+
 This will return an array of tokens generated & compare those token IDs with
 [OpenAI Tokenizer](https://platform.openai.com/tokenizer)
 
 You can also use the OpenAI Tokenizer to double-check package generated token counts.
 
 ## Support
+
 If you find TokenizerX helpful and would like to support its ongoing development, you can contribute by buying me a coffee! Your support helps in maintaining and improving the package for the Laravel community.
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/T6T4T0NM4)
@@ -139,6 +151,7 @@ To give a ⭐ star, simply click on the **Star** button at the top-right corner 
 ## License
 
 # TokenizerX is developed using 
+
 - [GPT-3 Encoder PHP](https://github.com/CodeRevolutionPlugins/GPT-3-Encoder-PHP)
 - [Tiktoken-php](https://github.com/yethee/tiktoken-php)
 - [Laravel Package Skeleton by Spatie](https://github.com/spatie/package-skeleton-laravel)
