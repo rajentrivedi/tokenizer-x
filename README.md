@@ -5,7 +5,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/rajentrivedi/tokenizer-x.svg?style=flat-square)](https://packagist.org/packages/rajentrivedi/tokenizer-x)
 
 
-TokenizerX supports Laravel 11 and Laravel 10.
+TokenizerX supports Laravel 10, 11 & 12.
 
 ### Installation
 
