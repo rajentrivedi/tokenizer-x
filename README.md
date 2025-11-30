@@ -23,9 +23,21 @@ To access the OpenAI Rest API, you may consider the beautiful Laravel Package
 [OpenAI PHP](https://github.com/openai-php/client).
 
 ## Supported OpenAI Models
-- gpt-4o
+- o1
+- o3
+- o4-mini
+- gpt-5
 - gpt-4
+- gpt-4.1
+- gpt-4.5
+- gpt-4o
 - gpt-3.5-turbo
+- gpt-3.5
+- davinci-002
+- babbage-002
+- text-embedding-ada-002
+- text-embedding-3-small
+- text-embedding-3-large
 - text-davinci-003
 - text-davinci-002
 - text-davinci-001
@@ -44,7 +56,6 @@ To access the OpenAI Rest API, you may consider the beautiful Laravel Package
 - cushman-codex
 - text-davinci-edit-001
 - code-davinci-edit-001
-- text-embedding-ada-002
 - text-similarity-davinci-001
 - text-similarity-curie-001
 - text-similarity-babbage-001
@@ -61,6 +72,7 @@ To access the OpenAI Rest API, you may consider the beautiful Laravel Package
 - p50k_base
 - p50k_edit
 - cl100k_base
+- o200k_base
 
 
 ## Installation

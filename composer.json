@@ -37,7 +37,7 @@
         "illuminate/contracts": "^10.0 || ^11.0 || ^12.0",
         "illuminate/support": "^9.52.16 || ^10.28.0 || ^11.0 || ^12.0",
         "spatie/laravel-package-tools": "^1.14.0",
-        "yethee/tiktoken": "^0.5.1"
+        "yethee/tiktoken": "^0.11.1"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
