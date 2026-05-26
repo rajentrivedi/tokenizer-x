@@ -33,20 +33,20 @@
     ],
     "require": {
         "php": "^8.1",
-        "illuminate/console": "^9.52.16 || ^10.28.0 || ^11.0 || ^12.0",
-        "illuminate/contracts": "^10.0 || ^11.0 || ^12.0",
-        "illuminate/support": "^9.52.16 || ^10.28.0 || ^11.0 || ^12.0",
+        "illuminate/console": "^9.52.16 || ^10.28.0 || ^11.0 || ^12.0 || ^13.0",
+        "illuminate/contracts": "^10.0 || ^11.0 || ^12.0 || ^13.0",
+        "illuminate/support": "^9.52.16 || ^10.28.0 || ^11.0 || ^12.0 || ^13.0",
         "spatie/laravel-package-tools": "^1.14.0",
         "yethee/tiktoken": "^0.11.1"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
         "nunomaduro/collision": "^7.0 || ^8.0 || ^9.0 ||^10.0",
-        "nunomaduro/larastan": "^2.9.2",
-        "orchestra/testbench": "^7.33.0 || ^8.13.0 || ^9.0.0 || ^10.0",
-        "pestphp/pest": "^2.0 || ^3.7",
-        "pestphp/pest-plugin-arch": "^2.0 || ^3.0",
-        "pestphp/pest-plugin-laravel": "^2.0 || ^3.1",
+        "nunomaduro/larastan": "^2.9.2 || ^3.0",
+        "orchestra/testbench": "^7.33.0 || ^8.13.0 || ^9.0.0 || ^10.0 || ^11.0",
+        "pestphp/pest": "^2.0 || ^3.7 || ^4.4.1",
+        "pestphp/pest-plugin-arch": "^2.0 || ^3.0 || ^4.0",
+        "pestphp/pest-plugin-laravel": "^2.0 || ^3.1 || ^4.1",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^1.0 || ^2.0",
         "phpstan/phpstan-phpunit": "^1.0 || ^2.0"
@@ -64,8 +64,8 @@
     },
     "scripts": {
         "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
-        "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
+        "analyse": "vendor/bin/phpstan analyse --memory-limit=1G",
+        "test": "vendor/bin/pest --no-coverage",
         "test-coverage": "vendor/bin/pest --coverage",
         "format": "vendor/bin/pint"
     },

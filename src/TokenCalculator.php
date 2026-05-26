@@ -52,8 +52,8 @@ class TokenCalculator
             return $bpe_tokens;
         }
 
-        preg_match_all("#'s|'t|'re|'ve|'m|'ll|'d| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+#u", $text, $matches);
-        if (! isset($matches[0]) || count($matches[0]) == 0) {
+        $matchCount = preg_match_all("#'s|'t|'re|'ve|'m|'ll|'d| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+#u", $text, $matches);
+        if ($matchCount === false || count($matches[0]) == 0) {
             error_log('Failed to match string: '.$text);
 
             return $bpe_tokens;
@@ -176,25 +176,27 @@ class TokenCalculator
 
     public function gpt_unichr($c)
     {
-        if (ord($c[0]) >= 0 && ord($c[0]) <= 127) {
-            return ord($c[0]);
+        $code = ord($c[0]);
+
+        if ($code <= 127) {
+            return $code;
         }
-        if (ord($c[0]) >= 192 && ord($c[0]) <= 223) {
-            return (ord($c[0]) - 192) * 64 + (ord($c[1]) - 128);
+        if ($code >= 192 && $code <= 223) {
+            return ($code - 192) * 64 + (ord($c[1]) - 128);
         }
-        if (ord($c[0]) >= 224 && ord($c[0]) <= 239) {
-            return (ord($c[0]) - 224) * 4096 + (ord($c[1]) - 128) * 64 + (ord($c[2]) - 128);
+        if ($code >= 224 && $code <= 239) {
+            return ($code - 224) * 4096 + (ord($c[1]) - 128) * 64 + (ord($c[2]) - 128);
         }
-        if (ord($c[0]) >= 240 && ord($c[0]) <= 247) {
-            return (ord($c[0]) - 240) * 262144 + (ord($c[1]) - 128) * 4096 + (ord($c[2]) - 128) * 64 + (ord($c[3]) - 128);
+        if ($code >= 240 && $code <= 247) {
+            return ($code - 240) * 262144 + (ord($c[1]) - 128) * 4096 + (ord($c[2]) - 128) * 64 + (ord($c[3]) - 128);
         }
-        if (ord($c[0]) >= 248 && ord($c[0]) <= 251) {
-            return (ord($c[0]) - 248) * 16777216 + (ord($c[1]) - 128) * 262144 + (ord($c[2]) - 128) * 4096 + (ord($c[3]) - 128) * 64 + (ord($c[4]) - 128);
+        if ($code >= 248 && $code <= 251) {
+            return ($code - 248) * 16777216 + (ord($c[1]) - 128) * 262144 + (ord($c[2]) - 128) * 4096 + (ord($c[3]) - 128) * 64 + (ord($c[4]) - 128);
         }
-        if (ord($c[0]) >= 252 && ord($c[0]) <= 253) {
-            return (ord($c[0]) - 252) * 1073741824 + (ord($c[1]) - 128) * 16777216 + (ord($c[2]) - 128) * 262144 + (ord($c[3]) - 128) * 4096 + (ord($c[4]) - 128) * 64 + (ord($c[5]) - 128);
+        if ($code >= 252 && $code <= 253) {
+            return ($code - 252) * 1073741824 + (ord($c[1]) - 128) * 16777216 + (ord($c[2]) - 128) * 262144 + (ord($c[3]) - 128) * 4096 + (ord($c[4]) - 128) * 64 + (ord($c[5]) - 128);
         }
-        if (ord($c[0]) >= 254 && ord($c[0]) <= 255) {
+        if ($code >= 254) {
             return 0;
         }
 
@@ -267,7 +269,7 @@ class TokenCalculator
                     $rank = $bpe_ranks[$pair[0].','.$pair[1]];
                     $minPairs[$rank] = $pair;
                 } else {
-                    $minPairs[10e10] = $pair;
+                    $minPairs[100000000000] = $pair;
                 }
             }
             ksort($minPairs);

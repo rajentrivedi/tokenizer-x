@@ -1,6 +1,7 @@
 name: Laravel Tests
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -10,19 +11,40 @@ on:
 
 jobs:
   tests:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
-        os: [ubuntu-latest]
-        php: [8.1, 8.2, 8.3]
-        laravel: ['10.*', '11.*', '12.*']
-        exclude:
-          - laravel: 11.*
-            php: 8.1
-          - laravel: 12.*
-            php: 8.1
+        include:
+          - php: '8.2'
+            laravel: '10.*'
+          - php: '8.3'
+            laravel: '10.*'
+          - php: '8.4'
+            laravel: '10.*'
+          - php: '8.2'
+            laravel: '11.*'
+          - php: '8.3'
+            laravel: '11.*'
+          - php: '8.4'
+            laravel: '11.*'
+          - php: '8.5'
+            laravel: '11.*'
+          - php: '8.2'
+            laravel: '12.*'
+          - php: '8.3'
+            laravel: '12.*'
+          - php: '8.4'
+            laravel: '12.*'
+          - php: '8.5'
+            laravel: '12.*'
+          - php: '8.3'
+            laravel: '13.*'
+          - php: '8.4'
+            laravel: '13.*'
+          - php: '8.5'
+            laravel: '13.*'
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }}
 
@@ -39,7 +61,37 @@ jobs:
           coverage: none
 
       - name: Install dependencies
-        run: composer update --prefer-stable --prefer-dist --no-interaction --no-progress
+        run: |
+          case "${{ matrix.laravel }}" in
+            "10.*")
+              TESTBENCH=">=8.13.0 <9.0"
+              PEST=">=2.0 <3.0"
+              PEST_ARCH=">=2.0 <3.0"
+              PEST_LARAVEL=">=2.0 <3.0"
+              ;;
+            "11.*")
+              TESTBENCH=">=9.0 <10.0"
+              PEST=">=3.7 <4.0"
+              PEST_ARCH=">=3.0 <4.0"
+              PEST_LARAVEL=">=3.1 <4.0"
+              ;;
+            "12.*")
+              TESTBENCH=">=10.0 <11.0"
+              PEST=">=3.7 <4.0"
+              PEST_ARCH=">=3.0 <4.0"
+              PEST_LARAVEL=">=3.1 <4.0"
+              ;;
+            "13.*")
+              TESTBENCH=">=11.0 <12.0"
+              PEST=">=4.4.1 <5.0"
+              PEST_ARCH=">=4.0 <5.0"
+              PEST_LARAVEL=">=4.1 <5.0"
+              ;;
+          esac
+
+          composer require "illuminate/console:${{ matrix.laravel }}" "illuminate/contracts:${{ matrix.laravel }}" "illuminate/support:${{ matrix.laravel }}" --no-interaction --no-update
+          composer require "orchestra/testbench:${TESTBENCH}" "pestphp/pest:${PEST}" "pestphp/pest-plugin-arch:${PEST_ARCH}" "pestphp/pest-plugin-laravel:${PEST_LARAVEL}" --dev --no-interaction --no-update
+          composer update --prefer-stable --prefer-dist --no-interaction --no-progress
 
       - name: Execute tests
-        run: vendor/bin/pest
+        run: vendor/bin/pest --no-coverage
